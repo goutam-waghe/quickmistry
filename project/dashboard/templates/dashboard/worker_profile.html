@@ -1,0 +1,103 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ worker.name }} - Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        h2 {
+            margin: 0;
+            color: #333;
+        }
+        .profile-info p {
+            font-size: 16px;
+            margin: 8px 0;
+            color: #555;
+        }
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #007bff;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+    .book-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    .book-btn:hover {
+        background: #218838;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{% static 'images/avtar.png' %}" alt="Worker Avatar">
+            <div>
+                <h2>{{ worker.name }}</h2>
+                <p><strong>Role:</strong> {{ worker.get_role_display }}</p>
+                <p><strong>City:</strong> {{ worker.city }}</p>
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <p><strong>Email:</strong> {{ worker.email }}</p>
+            <p><strong>Phone:</strong> {{ worker.phone }}</p>
+            <p><strong>Service Category:</strong> {{ worker.serviceCategory.name }}</p>
+            <p><strong>Skills:</strong> {{ worker.skills }}</p>
+            <p><strong>Experience:</strong> {{ worker.experience }} years</p>
+            <p><strong>Rate:</strong> ₹{{ worker.rate }} / hr</p>
+            
+        </div>
+        <div class="profile_bottom">
+    <p><strong>Availability:</strong> 
+        {% if worker.availability %}
+            <span class="tag">Available</span>
+        {% else %}
+            <span class="tag" style="background:#dc3545;">Not Available</span>
+        {% endif %}     
+    </p>
+
+    <a href="{% url 'booking:book_worker' worker.id %}" class="book-btn">Book</a>
+</div>
+</body>
+</html>

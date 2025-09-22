@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+   {% block header %}
+    <header>
+        <div>
+            
+            <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+
+            
+            <ul>
+            <li><a href="{% url "worker"%}">Home</a></li>
+            <li><a href="{% url "worker_request"%}">Request Job</a></li>
+            <li><a href="{% url "worker_ongoing"%}">OnGoing jobs</a></li>
+            <li><a href="{% url "worker_completed"%}">Completed Jobs</a></li>
+            </ul>
+
+            <div> 
+           <a href=""> Profile</a>
+            </div>
+        </div>
+        </header>
+   {% endblock header %}
+   {% block main %}{% endblock main %}
+   {% block footer %}
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your service booking partner. Book trusted workers anytime, anywhere.</p>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@yourapp.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <div class="social">
+                    <a href="#"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+                    <a href="#"><img src="{% static 'images/twitter.png' %}" alt="Twitter"></a>
+                    <a href="#"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {{ now|date:"Y" }} YourApp. All rights reserved.</p>
+        </div>
+    </footer>
+   {% endblock footer %}
+</body>
+</html>

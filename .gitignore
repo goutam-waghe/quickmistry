@@ -1,0 +1,64 @@
+# Python __pycache__ and .pyc files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migration files (optional - depends on your workflow)
+# Uncomment if you don't want to track them
+# **/migrations/
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# Environment variables
+.env
+*.env
+
+# SQLite database
+*.sqlite3
+
+# VSCode and other IDEs
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Logs
+*.log
+
+# Media and static files (only if generated dynamically)
+media/
+staticfiles/
+static_root/
+media_root/
+
+# Coverage and test reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+coverage.xml
+*.cover
+.cache
+.pytest_cache/
+
+# mypy and other tools
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# pip-tools output
+*.txt.lock
+
+# PyInstaller
+*.spec
+
+# Sentry CLI auth
+.sentryclirc

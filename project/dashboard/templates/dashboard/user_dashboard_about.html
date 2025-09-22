@@ -1,0 +1,165 @@
+{% extends "dashboard/user_dashboard.html" %}
+
+{% block main %}
+<section class="about-page">
+    <div class="container">
+        <h1>About TaskConnect</h1>
+        <p>
+            TaskConnect is a trusted platform that bridges the gap between customers and skilled workers. 
+            Whether you need a plumber, electrician, carpenter, or cleaner, TaskConnect makes it simple 
+            to find and book reliable services.
+        </p>
+
+        <div class="about-content">
+            <!-- Mission -->
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>
+                    To empower workers by providing them with opportunities and to give customers 
+                    easy access to skilled professionals they can trust.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="about-section">
+                <h2>Our Vision</h2>
+                <p>
+                    To become India’s most reliable service platform where customers can book trusted 
+                    professionals anytime, anywhere — and workers can grow their careers with dignity.
+                </p>
+            </div>
+
+            <!-- Values -->
+            <div class="about-section">
+                <h2>Our Values</h2>
+                <ul>
+                    <li>Trust & Transparency</li>
+                    <li>Quality Service</li>
+                    <li>Customer Satisfaction</li>
+                    <li>Worker Empowerment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="about-steps">
+            <h2>How TaskConnect Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <p>Customer searches for a service</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <p>Choose a skilled worker</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <p>Book and schedule the service</p>
+                </div>
+                <div class="step">
+                    <span>4</span>
+                    <p>Worker completes the job & gets paid</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}
+
+{% block css %}
+<style>
+        .about-page {
+            padding: 60px 20px;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .about-page h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .about-page p {
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .about-section {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #f9a825;
+            margin-bottom: 10px;
+        }
+
+        .about-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* How it Works Section */
+        .about-steps {
+            text-align: center;
+        }
+
+        .about-steps h2 {
+            color: #f9a825;
+            margin-bottom: 30px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .step span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f9a825;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width: 768px){
+            .about-content {
+                flex-direction: column;
+            }
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+</style>
+{% endblock css %}
